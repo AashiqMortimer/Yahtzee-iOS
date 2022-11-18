@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var diceRollContainer: UIView!
     @IBOutlet weak var diceStart: UIView!
+    @IBOutlet weak var rollButton: UIButton!
     
     @IBOutlet weak var onesScore: UILabel!
     @IBOutlet weak var twosScore: UILabel!
@@ -74,16 +75,30 @@ class ViewController: UIViewController {
 
     @IBAction func rollButton(_ sender: Any) {
         //update counter to control logic
+        if gameBrain.moveCount == 2 {
+            rollButton.isUserInteractionEnabled = false
+        }
+        
         gameBrain.moveCount += 1
-        print(diceOne.isHidden)
+        print(gameBrain.moveCount)
         
         //Push dice into dice roll container and randomise
         
-        diceOne.image = gameBrain.diceArray.randomElement()
-        diceTwo.image = gameBrain.diceArray.randomElement()
-        diceThree.image = gameBrain.diceArray.randomElement()
-        diceFour.image = gameBrain.diceArray.randomElement()
-        diceFive.image = gameBrain.diceArray.randomElement()
+        if diceOne.isHidden || gameBrain.moveCount == 1 {
+            diceOne.image = gameBrain.diceArray.randomElement()
+        }
+        if diceTwo.isHidden || gameBrain.moveCount == 1 {
+            diceTwo.image = gameBrain.diceArray.randomElement()
+        }
+        if diceThree.isHidden || gameBrain.moveCount == 1 {
+            diceThree.image = gameBrain.diceArray.randomElement()
+        }
+        if diceFour.isHidden || gameBrain.moveCount == 1 {
+            diceFour.image = gameBrain.diceArray.randomElement()
+        }
+        if diceFive.isHidden || gameBrain.moveCount == 1 {
+            diceFive.image = gameBrain.diceArray.randomElement()
+        }
         
         gameBrain.updateValue(diceOne.image!, diceTwo.image!, diceThree.image!, diceFour.image!, diceFive.image!)
         
@@ -93,17 +108,16 @@ class ViewController: UIViewController {
         diceFourOpen.image = diceFour.image
         diceFiveOpen.image = diceFive.image
         
-        //On first roll, only display dice in open container and not in hold.
+        //On first roll, only display dice in open container and not in hold. Before first roll, only display dice in hold.
         if gameBrain.moveCount == 1 {
             gameBrain.hideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
             gameBrain.unhideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
         }
         
-        
         //Only randomise dice within dice roll container
     
-        //Refresh scores.
-        //Update so that when user selects a score, it stores that number so only numbers that have not been selected are refreshed to zero. Possible IF statement.
+        //Refresh scores
+        //Update so that when user selects a score, it stores that number so only numbers that have not been selected are refreshed to zero. Re-enable score selection after disabling in button function.
         if oneScoreButton.backgroundColor != UIColor.green{
             gameBrain.ones = 0
             gameBrain.calculateOnes()
@@ -114,171 +128,257 @@ class ViewController: UIViewController {
             gameBrain.twos = 0
             gameBrain.calculateTwos()
             twosScore.text = String(gameBrain.twos)
+            twoScoreButton.isEnabled = true
         }
         
         if threeScoreButton.backgroundColor != UIColor.green{
             gameBrain.threes = 0
             gameBrain.calculateThrees()
             threesScore.text = String(gameBrain.threes)
+            threeScoreButton.isEnabled = true
         }
         
         if fourScoreButton.backgroundColor != UIColor.green{
             gameBrain.fours = 0
             gameBrain.calculateFours()
             foursScore.text = String(gameBrain.fours)
+            fourScoreButton.isEnabled = true
         }
         
         if fiveScoreButton.backgroundColor != UIColor.green{
             gameBrain.fives = 0
             gameBrain.calculateFives()
             fivesScore.text = String(gameBrain.fives)
+            fiveScoreButton.isEnabled = true
         }
         
         if sixScoreButton.backgroundColor != UIColor.green{
             gameBrain.sixes = 0
             gameBrain.calculateSixes()
             sixesScore.text = String(gameBrain.sixes)
+            sixScoreButton.isEnabled = true
         }
         
         if threeOfAKindScoreButton.backgroundColor != UIColor.green{
             gameBrain.threeOfAKind = 0
             gameBrain.calculateThreeOfAKind()
             threeOfAKindScore.text = String(gameBrain.threeOfAKind)
+            threeOfAKindScoreButton.isEnabled = true
         }
         
         if fourOfAKindScoreButton.backgroundColor != UIColor.green{
             gameBrain.fourOfAKind = 0
             gameBrain.calculateFourOfAKind()
             fourOfAKindScore.text = String(gameBrain.fourOfAKind)
+            fourOfAKindScoreButton.isEnabled = true
         }
         
         if fullHouseScoreButton.backgroundColor != UIColor.green{
             gameBrain.fullHouse = 0
             gameBrain.calculateFullHouse()
             fullHouseScore.text = String(gameBrain.fullHouse)
+            fullHouseScoreButton.isEnabled = true
         }
         
         if smallStraightScoreButton.backgroundColor != UIColor.green{
             gameBrain.smallStraight = 0
             gameBrain.calculateSmallStraight()
             smallStraightScore.text = String(gameBrain.smallStraight)
+            smallStraightScoreButton.isEnabled = true
         }
         
         if largeStraightScoreButton.backgroundColor != UIColor.green{
             gameBrain.largeStraight = 0
             gameBrain.calculateLargeStraight()
             largeStraightScore.text = String(gameBrain.largeStraight)
+            largeStraightScoreButton.isEnabled = true
         }
         
         if chanceScoreButton.backgroundColor != UIColor.green{
             gameBrain.chance = 0
             gameBrain.calculateChance()
             chanceScore.text = String(gameBrain.chance)
+            chanceScoreButton.isEnabled = true
         }
         
         if yahtzeeScoreButton.backgroundColor != UIColor.green{
             gameBrain.yahtzee = 0
             gameBrain.calculateYahtzee()
             yahtzeeScore.text = String(gameBrain.yahtzee)
+            yahtzeeScoreButton.isEnabled = true
         }
-        
-        
     }
-    
     
     @IBAction func oneScoreButton(_ sender: Any) {
         oneScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.ones
         totalScore.text = String(gameBrain.savedScore)
-        oneScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func twoScoreButton(_ sender: UIButton) {
         twoScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.twos
         totalScore.text = String(gameBrain.savedScore)
-        twoScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func threeScoreButton(_ sender: UIButton) {
         threeScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.threes
         totalScore.text = String(gameBrain.savedScore)
-        threeScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func fourScoreButton(_ sender: UIButton) {
         fourScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.fours
         totalScore.text = String(gameBrain.savedScore)
-        fourScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func fiveScoreButton(_ sender: UIButton) {
         fiveScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.fives
         totalScore.text = String(gameBrain.savedScore)
-        fiveScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func sixScoreButton(_ sender: UIButton) {
         sixScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.sixes
         totalScore.text = String(gameBrain.savedScore)
-        sixScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func threeOfAKindScoreButton(_ sender: Any) {
         threeOfAKindScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.threeOfAKind
         totalScore.text = String(gameBrain.savedScore)
-        threeOfAKindScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func fourOfAKindScoreButton(_ sender: UIButton) {
         fourOfAKindScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.fourOfAKind
         totalScore.text = String(gameBrain.savedScore)
-        fourOfAKindScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func fullHouseScoreButton(_ sender: UIButton) {
         fullHouseScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.fullHouse
         totalScore.text = String(gameBrain.savedScore)
-        fullHouseScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func smallStraightScoreButton(_ sender: UIButton) {
         smallStraightScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.smallStraight
         totalScore.text = String(gameBrain.savedScore)
-        smallStraightScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func largeStraightScoreButton(_ sender: UIButton) {
         largeStraightScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.largeStraight
         totalScore.text = String(gameBrain.savedScore)
-        largeStraightScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func chanceScoreButton(_ sender: UIButton) {
         chanceScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.chance
         totalScore.text = String(gameBrain.savedScore)
-        chanceScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     @IBAction func yahtzeeScoreButton(_ sender: UIButton) {
         yahtzeeScoreButton.backgroundColor = UIColor.green
         gameBrain.savedScore += gameBrain.yahtzee
         totalScore.text = String(gameBrain.savedScore)
-        yahtzeeScoreButton.isEnabled = false
+        gameBrain.moveCount = 0
+        rollButton.isUserInteractionEnabled = true
+        gameBrain.hideSet(d1: diceOneOpen, d2: diceTwoOpen, d3: diceThreeOpen, d4: diceFourOpen, d5: diceFiveOpen)
+        gameBrain.unhideSet(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        gameBrain.resetDiceImages(d1: diceOne, d2: diceTwo, d3: diceThree, d4: diceFour, d5: diceFive)
+        //Below logic to prevent user from selecting multiple scores in one round. isHidden value re-enabled when roll button tapped.
+        gameBrain.disableScores(S1: oneScoreButton, S2: twoScoreButton, S3: threeScoreButton, S4: fourScoreButton, S5: fiveScoreButton, S6: sixScoreButton, S7: threeOfAKindScoreButton, S8: fourOfAKindScoreButton, S9: fullHouseScoreButton, S10: smallStraightScoreButton, S11: largeStraightScoreButton, S12: chanceScoreButton, S13: yahtzeeScoreButton)
     }
     
     //Dice movement code. Tap gesture recognizers.
-    //Logic is currently underdeveloped; will need to adapt to sophisticated game move logic.
     @IBAction func tappedDiceOneOpen(_ sender: UITapGestureRecognizer) {
         if gameBrain.moveCount > 0 {
             gameBrain.hideAndDisplay(dice: diceOneOpen, dice2: diceOne)

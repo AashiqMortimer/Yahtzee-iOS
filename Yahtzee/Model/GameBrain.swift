@@ -357,4 +357,28 @@ struct GameBrain {
         dice.isHidden = true
         dice2.isHidden = false
     }
+    
+    func resetDiceImages(d1: UIImageView, d2: UIImageView, d3: UIImageView, d4: UIImageView, d5: UIImageView){
+        d1.image = #imageLiteral(resourceName: "DiceSix")
+        d2.image = #imageLiteral(resourceName: "DiceSix")
+        d3.image = #imageLiteral(resourceName: "DiceSix")
+        d4.image = #imageLiteral(resourceName: "DiceSix")
+        d5.image = #imageLiteral(resourceName: "DiceSix")
+    }
+    
+    func disableScores(S1: UIButton, S2: UIButton, S3: UIButton, S4: UIButton, S5: UIButton, S6: UIButton, S7: UIButton, S8: UIButton, S9: UIButton, S10: UIButton, S11: UIButton, S12: UIButton, S13: UIButton){
+        S1.isEnabled = false
+        S2.isEnabled = false
+        S3.isEnabled = false
+        S4.isEnabled = false
+        S5.isEnabled = false
+        S6.isEnabled = false
+        S7.isEnabled = false
+        S8.isEnabled = false
+        S9.isEnabled = false
+        S10.isEnabled = false
+        S11.isEnabled = false
+        S12.isEnabled = false
+        S13.isEnabled = false
+    }
 }
