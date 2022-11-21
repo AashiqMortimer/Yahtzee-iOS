@@ -171,7 +171,7 @@
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wrc-mf-7uK">
-                                <rect key="frame" x="224" y="103" width="165" height="40"/>
+                                <rect key="frame" x="227" y="103" width="165" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b7P-Th-czP">
@@ -201,7 +201,7 @@
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                             </view>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xu2-z1-8el">
-                                <rect key="frame" x="224" y="145" width="165" height="40"/>
+                                <rect key="frame" x="227" y="145" width="165" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Pu-Hg-P6f">
@@ -231,7 +231,7 @@
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Py6-ZL-m4w">
-                                <rect key="frame" x="224" y="187" width="165" height="40"/>
+                                <rect key="frame" x="227" y="187" width="165" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BCT-C8-ON1">
@@ -261,7 +261,7 @@
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                             </view>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h0f-uG-DOQ">
-                                <rect key="frame" x="224" y="229" width="165" height="40"/>
+                                <rect key="frame" x="227" y="229" width="165" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RPz-oG-6ia">
@@ -291,7 +291,7 @@
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SR6-qG-LcZ">
-                                <rect key="frame" x="224" y="271" width="165" height="40"/>
+                                <rect key="frame" x="227" y="271" width="165" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E18-2c-RL7">
@@ -356,7 +356,7 @@
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWK-33-Rq0">
-                                <rect key="frame" x="224" y="313" width="165" height="40"/>
+                                <rect key="frame" x="227" y="313" width="165" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdZ-oY-zu8">
@@ -386,7 +386,7 @@
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OB0-qM-Eka">
-                                <rect key="frame" x="225" y="355" width="165" height="40"/>
+                                <rect key="frame" x="228" y="355" width="165" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                             </view>
@@ -414,7 +414,7 @@
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                             </view>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="APQ-53-0lL">
-                                <rect key="frame" x="225" y="395" width="165" height="40"/>
+                                <rect key="frame" x="228" y="395" width="165" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQ3-Pl-tTq">
@@ -475,7 +475,7 @@
                                 <color key="tintColor" systemColor="tintColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtH-bQ-kSH">
-                                <rect key="frame" x="128" y="670" width="134" height="50"/>
+                                <rect key="frame" x="128" y="666" width="134" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="ROLL" cornerStyle="capsule" titleAlignment="center">
@@ -491,11 +491,11 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JBH-qt-kzm">
-                                <rect key="frame" x="49" y="749" width="292" height="61"/>
+                                <rect key="frame" x="49" y="744" width="292" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="DiceSix" translatesAutoresizingMaskIntoConstraints="NO" id="Qp8-7q-Hxi">
-                                        <rect key="frame" x="17" y="6" width="47" height="47"/>
+                                        <rect key="frame" x="17" y="9" width="47" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -503,7 +503,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="DiceSix" translatesAutoresizingMaskIntoConstraints="NO" id="hZ1-Nt-6Qi">
-                                        <rect key="frame" x="120" y="6" width="50" height="47"/>
+                                        <rect key="frame" x="120" y="9" width="50" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -511,7 +511,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="DiceSix" translatesAutoresizingMaskIntoConstraints="NO" id="VXD-6a-pXg">
-                                        <rect key="frame" x="174" y="6" width="45" height="47"/>
+                                        <rect key="frame" x="174" y="9" width="45" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -519,7 +519,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="DiceSix" translatesAutoresizingMaskIntoConstraints="NO" id="nzZ-8h-w3r">
-                                        <rect key="frame" x="224" y="6" width="48" height="47"/>
+                                        <rect key="frame" x="224" y="9" width="48" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -527,7 +527,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="DiceSix" translatesAutoresizingMaskIntoConstraints="NO" id="AXb-y0-Uhx">
-                                        <rect key="frame" x="69" y="6" width="47" height="47"/>
+                                        <rect key="frame" x="69" y="9" width="47" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -643,15 +643,81 @@
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <view alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dad-a6-vR1">
-                                <rect key="frame" x="-1" y="54" width="98" height="35"/>
+                                <rect key="frame" x="3" y="54" width="77" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98660081619999995" green="0.92898434399999996" blue="0.71368831399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.82999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rolls: 3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEh-uQ-eES">
-                                <rect key="frame" x="9" y="54" width="78" height="35"/>
+                                <rect key="frame" x="12" y="54" width="78" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" red="0.18447411059999999" green="0.38279134040000001" blue="0.2038894594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5w-Uk-Gtq">
+                                <rect key="frame" x="45" y="297" width="301" height="237"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME OVER!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vi-M9-wNF">
+                                        <rect key="frame" x="44" y="20" width="213" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="32"/>
+                                        <color key="textColor" red="0.18447411059999999" green="0.38279134040000001" blue="0.2038894594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your total score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCQ-9E-c5S">
+                                        <rect key="frame" x="64" y="65" width="173" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.18447411059999999" green="0.38279134040000001" blue="0.2038894594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;Total Score&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94l-4M-AcZ">
+                                        <rect key="frame" x="97" y="99" width="106" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.18447411059999999" green="0.38279134040000001" blue="0.2038894594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Would you like to play again?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qm7-Kc-Uyq">
+                                        <rect key="frame" x="13" y="135" width="275" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <color key="textColor" red="0.18447411059999999" green="0.38279134040000001" blue="0.2038894594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUf-Ze-O2V">
+                                        <rect key="frame" x="162" y="179" width="82" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="NO" cornerStyle="capsule">
+                                            <color key="baseForegroundColor" red="0.98660081619999995" green="0.92898434399999996" blue="0.71368831399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="baseBackgroundColor" red="0.18447411059999999" green="0.38279134040000001" blue="0.2038894594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="endGameNo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lH2-9l-te7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVg-lI-GPd">
+                                        <rect key="frame" x="51" y="179" width="82" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="YES" cornerStyle="capsule">
+                                            <color key="baseForegroundColor" red="0.98660081619999995" green="0.92898434399999996" blue="0.71368831399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="baseBackgroundColor" red="0.18447411059999999" green="0.38279134040000001" blue="0.2038894594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="endGameYes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tt2-D5-YLP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98660081619999995" green="0.92898434399999996" blue="0.71368831399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.28000000000000003" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ROUND 1 OF 13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="594-ra-H2H">
+                                <rect key="frame" x="124" y="443" width="143" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.98660081619999995" green="0.92898434399999996" blue="0.71368831399999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -679,6 +745,11 @@
                         <outlet property="diceThreeOpen" destination="MLU-qv-NGp" id="CSy-th-tQO"/>
                         <outlet property="diceTwo" destination="AXb-y0-Uhx" id="aDk-EB-VCh"/>
                         <outlet property="diceTwoOpen" destination="cvi-6t-Pdd" id="QiV-EO-Hov"/>
+                        <outlet property="endGameNo" destination="sUf-Ze-O2V" id="hN5-48-w8m"/>
+                        <outlet property="endGameQuestion" destination="qm7-Kc-Uyq" id="W2Q-Pb-y0E"/>
+                        <outlet property="endGameTotalScore" destination="94l-4M-AcZ" id="hOs-gE-AXD"/>
+                        <outlet property="endGameView" destination="i5w-Uk-Gtq" id="1oo-aX-NeZ"/>
+                        <outlet property="endGameYes" destination="FVg-lI-GPd" id="bhO-7C-ik1"/>
                         <outlet property="fiveScoreButton" destination="Uhk-6V-d82" id="gzd-87-Hg4"/>
                         <outlet property="fivesScore" destination="h0n-2u-kaY" id="VVl-1q-rQ3"/>
                         <outlet property="fourOfAKindScore" destination="zKX-fY-sDh" id="djy-YS-N3X"/>
@@ -687,10 +758,13 @@
                         <outlet property="foursScore" destination="Iss-g3-dEJ" id="qq3-PD-ZWy"/>
                         <outlet property="fullHouseScore" destination="anH-CL-Acw" id="Btz-iZ-9Hx"/>
                         <outlet property="fullHouseScoreButton" destination="LMA-rI-6hr" id="iJW-Ob-6lj"/>
+                        <outlet property="gameRoundCounter" destination="594-ra-H2H" id="fBF-26-UIM"/>
                         <outlet property="largeStraightScore" destination="fEn-LS-2g1" id="LHR-dG-tO3"/>
                         <outlet property="largeStraightScoreButton" destination="qM5-Zc-eXk" id="SUB-J0-LRP"/>
                         <outlet property="oneScoreButton" destination="IwL-rc-JNx" id="Q2R-NU-AdV"/>
                         <outlet property="onesScore" destination="nOL-9b-i2C" id="JbZ-g8-Gnc"/>
+                        <outlet property="promptContainer" destination="Dad-a6-vR1" id="nPx-3V-bUB"/>
+                        <outlet property="promptText" destination="WEh-uQ-eES" id="zC2-IT-A0V"/>
                         <outlet property="rollButton" destination="QtH-bQ-kSH" id="Crk-CK-AIv"/>
                         <outlet property="sixScoreButton" destination="S3T-fb-AJC" id="DrK-QS-mGV"/>
                         <outlet property="sixesScore" destination="4CC-C2-gOU" id="ar0-Aj-JIf"/>

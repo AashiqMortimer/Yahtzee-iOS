@@ -11,6 +11,18 @@ Prevent user from selecting other scores after first by implementing logic to de
 
 Move counter label: Share same UI as roll button?
 
+3. AI player (Maybe not, just stick to End Game)
+4. End game (who won, replay?)
+Add UIView to Main. Change to hidden when game loads. Only make visible when game ends. 
+Add Buttons to select whether user wants to restart game. 
+Restart game prompt should reset totalScore, and background colours. Is there an easy way to restart? 
+
+Roll out end game logic to other score selection functions. 
+
+5. Move tracker
+6. Optimise algorithm code
+
+
 # Things I've looked up:
 
 1. Programmatically initialising views such as containers
