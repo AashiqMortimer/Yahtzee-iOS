@@ -36,13 +36,6 @@ struct GameBrain {
     
     //Saved Total Score
     var savedScore = 0
-    //Upper Scoring Logic
-    var ones = 0
-    var twos = 0
-    var threes = 0
-    var fours = 0
-    var fives = 0
-    var sixes = 0
     //Lower Scoring Logic
     var threeOfAKind = 0
     var fourOfAKind = 0
@@ -52,112 +45,42 @@ struct GameBrain {
     var yahtzee = 0
     var chance = 0
     
-    mutating func calculateOnes(){
-        if diceOneValue == 1 {
-            ones += 1
+    private func calculateSingles(_ value: Int) -> Int {
+        let diceValueArray = [diceOneValue, diceTwoValue, diceThreeValue, diceFourValue, diceFiveValue]
+        var count = 0
+        
+        //I returned an error when changing 'dice' to $0. Can we look at this?
+        diceValueArray.forEach { dice in
+            if dice == value{
+                count += dice
+            }
         }
-        if diceTwoValue == 1 {
-            ones += 1
-        }
-        if diceThreeValue == 1 {
-            ones += 1
-        }
-        if diceFourValue == 1 {
-            ones += 1
-        }
-        if diceFiveValue == 1 {
-            ones += 1
-        }
+        
+        return count
     }
     
-    mutating func calculateTwos(){
-        if diceOneValue == 2 {
-            twos += 2
-        }
-        if diceTwoValue == 2 {
-            twos += 2
-        }
-        if diceThreeValue == 2 {
-            twos += 2
-        }
-        if diceFourValue == 2 {
-            twos += 2
-        }
-        if diceFiveValue == 2 {
-            twos += 2
-        }
+    func ones() -> Int{
+        calculateSingles(1)
     }
     
-    mutating func calculateThrees(){
-        if diceOneValue == 3 {
-            threes += 3
-        }
-        if diceTwoValue == 3 {
-            threes += 3
-        }
-        if diceThreeValue == 3 {
-            threes += 3
-        }
-        if diceFourValue == 3 {
-            threes += 3
-        }
-        if diceFiveValue == 3 {
-            threes += 3
-        }
+    func twos() -> Int{
+        calculateSingles(2)
     }
     
-    mutating func calculateFours(){
-        if diceOneValue == 4 {
-            fours += 4
-        }
-        if diceTwoValue == 4 {
-            fours += 4
-        }
-        if diceThreeValue == 4 {
-            fours += 4
-        }
-        if diceFourValue == 4 {
-            fours += 4
-        }
-        if diceFiveValue == 4 {
-            fours += 4
-        }
+    func threes() -> Int{
+        calculateSingles(3)
+    }
+
+    func fours() -> Int{
+        calculateSingles(4)
     }
     
-    mutating func calculateFives(){
-        if diceOneValue == 5 {
-            fives += 5
-        }
-        if diceTwoValue == 5 {
-            fives += 5
-        }
-        if diceThreeValue == 5 {
-            fives += 5
-        }
-        if diceFourValue == 5 {
-            fives += 5
-        }
-        if diceFiveValue == 5 {
-            fives += 5
-        }
+    func fives() -> Int{
+        calculateSingles(5)
     }
     
-    mutating func calculateSixes(){
-        if diceOneValue == 6 {
-            sixes += 6
-        }
-        if diceTwoValue == 6 {
-            sixes += 6
-        }
-        if diceThreeValue == 6 {
-            sixes += 6
-        }
-        if diceFourValue == 6 {
-            sixes += 6
-        }
-        if diceFiveValue == 6 {
-            sixes += 6
-        }
+    func sixes() -> Int{
+        calculateSingles(6)
     }
     
     mutating func calculateThreeOfAKind(){

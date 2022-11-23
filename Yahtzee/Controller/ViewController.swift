@@ -64,7 +64,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var endGameYes: UIButton!
     @IBOutlet weak var endGameNo: UIButton!
     
-    
     var gameBrain = GameBrain()
     
     override func viewDidLoad() {
@@ -90,9 +89,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func rollButton(_ sender: Any) {
-        //UI feedback for button
-        rollButton.isHighlighted = true
-        
         //update counter to control logic
         if gameBrain.moveCount == 2 {
             rollButton.isUserInteractionEnabled = false
@@ -139,44 +135,35 @@ class ViewController: UIViewController {
         //Refresh scores
         //Update so that when user selects a score, it stores that number so only numbers that have not been selected are refreshed to zero. Re-enable score selection after disabling in button function.
         if oneScoreButton.backgroundColor != UIColor.green{
-            gameBrain.ones = 0
-            gameBrain.calculateOnes()
-            onesScore.text = String(gameBrain.ones)
+//            gameBrain.ones = 0
+//            gameBrain.calculateOnes()
+//            onesScore.text = String(gameBrain.ones)
+            onesScore.text = String(gameBrain.ones())
             oneScoreButton.isEnabled = true
         }
         
         if twoScoreButton.backgroundColor != UIColor.green{
-            gameBrain.twos = 0
-            gameBrain.calculateTwos()
-            twosScore.text = String(gameBrain.twos)
+            twosScore.text = String(gameBrain.twos())
             twoScoreButton.isEnabled = true
         }
         
         if threeScoreButton.backgroundColor != UIColor.green{
-            gameBrain.threes = 0
-            gameBrain.calculateThrees()
-            threesScore.text = String(gameBrain.threes)
+            threesScore.text = String(gameBrain.threes())
             threeScoreButton.isEnabled = true
         }
         
         if fourScoreButton.backgroundColor != UIColor.green{
-            gameBrain.fours = 0
-            gameBrain.calculateFours()
-            foursScore.text = String(gameBrain.fours)
+            foursScore.text = String(gameBrain.fours())
             fourScoreButton.isEnabled = true
         }
         
         if fiveScoreButton.backgroundColor != UIColor.green{
-            gameBrain.fives = 0
-            gameBrain.calculateFives()
-            fivesScore.text = String(gameBrain.fives)
+            fivesScore.text = String(gameBrain.fives())
             fiveScoreButton.isEnabled = true
         }
         
         if sixScoreButton.backgroundColor != UIColor.green{
-            gameBrain.sixes = 0
-            gameBrain.calculateSixes()
-            sixesScore.text = String(gameBrain.sixes)
+            sixesScore.text = String(gameBrain.sixes())
             sixScoreButton.isEnabled = true
         }
         
@@ -232,7 +219,8 @@ class ViewController: UIViewController {
     
     @IBAction func oneScoreButton(_ sender: Any) {
         oneScoreButton.backgroundColor = UIColor.green
-        gameBrain.savedScore += gameBrain.ones
+        //Q: Instead of making multiple calls of this function, would it be better to call it once in ViewController via a variable and then use the var here to update the savedScore?
+        gameBrain.savedScore += gameBrain.ones()
         totalScore.text = String(gameBrain.savedScore)
         gameBrain.moveCount = 0
         gameBrain.roundCount += 1
@@ -254,7 +242,7 @@ class ViewController: UIViewController {
     
     @IBAction func twoScoreButton(_ sender: UIButton) {
         twoScoreButton.backgroundColor = UIColor.green
-        gameBrain.savedScore += gameBrain.twos
+        gameBrain.savedScore += gameBrain.twos()
         totalScore.text = String(gameBrain.savedScore)
         gameBrain.moveCount = 0
         gameBrain.roundCount += 1
@@ -276,7 +264,7 @@ class ViewController: UIViewController {
     
     @IBAction func threeScoreButton(_ sender: UIButton) {
         threeScoreButton.backgroundColor = UIColor.green
-        gameBrain.savedScore += gameBrain.threes
+        gameBrain.savedScore += gameBrain.threes()
         totalScore.text = String(gameBrain.savedScore)
         gameBrain.moveCount = 0
         gameBrain.roundCount += 1
@@ -298,7 +286,7 @@ class ViewController: UIViewController {
     
     @IBAction func fourScoreButton(_ sender: UIButton) {
         fourScoreButton.backgroundColor = UIColor.green
-        gameBrain.savedScore += gameBrain.fours
+        gameBrain.savedScore += gameBrain.fours()
         totalScore.text = String(gameBrain.savedScore)
         gameBrain.moveCount = 0
         gameBrain.roundCount += 1
@@ -320,7 +308,7 @@ class ViewController: UIViewController {
     
     @IBAction func fiveScoreButton(_ sender: UIButton) {
         fiveScoreButton.backgroundColor = UIColor.green
-        gameBrain.savedScore += gameBrain.fives
+        gameBrain.savedScore += gameBrain.fives()
         totalScore.text = String(gameBrain.savedScore)
         gameBrain.moveCount = 0
         gameBrain.roundCount += 1
@@ -342,7 +330,7 @@ class ViewController: UIViewController {
     
     @IBAction func sixScoreButton(_ sender: UIButton) {
         sixScoreButton.backgroundColor = UIColor.green
-        gameBrain.savedScore += gameBrain.sixes
+        gameBrain.savedScore += gameBrain.sixes()
         totalScore.text = String(gameBrain.savedScore)
         gameBrain.moveCount = 0
         gameBrain.roundCount += 1
