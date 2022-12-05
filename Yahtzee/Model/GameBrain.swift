@@ -7,6 +7,31 @@
 
 import UIKit
 
+final class GameBrain1 {
+    private let dices: [Int]
+    
+    init(_ dices: [Int]){
+        self.dices = dices
+    }
+    
+    func ones() -> Int {
+        return calculateSingles(1)
+    }
+    
+    private func calculateSingles(_ value: Int) -> Int {
+        var count = 0
+        
+        //I returned an error when changing 'dice' to $0. Can we look at this?
+        dices.forEach { dice in
+            if dice == value{
+                count += dice
+            }
+        }
+        
+        return count
+    }
+}
+
 struct GameBrain {
     
     //Dice Array

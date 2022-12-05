@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2499FFF0293627BE00F83B5E /* YahtzeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2499FFEF293627BE00F83B5E /* YahtzeeTests.swift */; };
+		2499FFF7293627F200F83B5E /* GameBrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2499FFF6293627F200F83B5E /* GameBrainTests.swift */; };
 		24AFA216290C6E2500A44B54 /* GameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA215290C6E2500A44B54 /* GameBrain.swift */; };
 		24ED8591290AE1A800845164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ED8590290AE1A800845164 /* AppDelegate.swift */; };
 		24ED8593290AE1A800845164 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ED8592290AE1A800845164 /* SceneDelegate.swift */; };
@@ -16,8 +18,21 @@
 		24ED859D290AE1AA00845164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24ED859B290AE1AA00845164 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2499FFF1293627BE00F83B5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24ED8585290AE1A800845164 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24ED858C290AE1A800845164;
+			remoteInfo = Yahtzee;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		240332F62923CA7E0013AE35 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		2499FFED293627BE00F83B5E /* YahtzeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YahtzeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2499FFEF293627BE00F83B5E /* YahtzeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahtzeeTests.swift; sourceTree = "<group>"; };
+		2499FFF6293627F200F83B5E /* GameBrainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBrainTests.swift; sourceTree = "<group>"; };
 		24AFA215290C6E2500A44B54 /* GameBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBrain.swift; sourceTree = "<group>"; };
 		24ED858D290AE1A800845164 /* Yahtzee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yahtzee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24ED8590290AE1A800845164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +45,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2499FFEA293627BE00F83B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24ED858A290AE1A800845164 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,10 +62,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2499FFEE293627BE00F83B5E /* YahtzeeTests */ = {
+			isa = PBXGroup;
+			children = (
+				2499FFEF293627BE00F83B5E /* YahtzeeTests.swift */,
+				2499FFF6293627F200F83B5E /* GameBrainTests.swift */,
+			);
+			path = YahtzeeTests;
+			sourceTree = "<group>";
+		};
 		24ED8584290AE1A800845164 = {
 			isa = PBXGroup;
 			children = (
 				24ED858F290AE1A800845164 /* Yahtzee */,
+				2499FFEE293627BE00F83B5E /* YahtzeeTests */,
 				24ED858E290AE1A800845164 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				24ED858D290AE1A800845164 /* Yahtzee.app */,
+				2499FFED293627BE00F83B5E /* YahtzeeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +132,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2499FFEC293627BE00F83B5E /* YahtzeeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2499FFF3293627BE00F83B5E /* Build configuration list for PBXNativeTarget "YahtzeeTests" */;
+			buildPhases = (
+				2499FFE9293627BE00F83B5E /* Sources */,
+				2499FFEA293627BE00F83B5E /* Frameworks */,
+				2499FFEB293627BE00F83B5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2499FFF2293627BE00F83B5E /* PBXTargetDependency */,
+			);
+			name = YahtzeeTests;
+			productName = YahtzeeTests;
+			productReference = 2499FFED293627BE00F83B5E /* YahtzeeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		24ED858C290AE1A800845164 /* Yahtzee */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24ED85A1290AE1AA00845164 /* Build configuration list for PBXNativeTarget "Yahtzee" */;
@@ -126,6 +177,10 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					2499FFEC293627BE00F83B5E = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 24ED858C290AE1A800845164;
+					};
 					24ED858C290AE1A800845164 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -145,11 +200,19 @@
 			projectRoot = "";
 			targets = (
 				24ED858C290AE1A800845164 /* Yahtzee */,
+				2499FFEC293627BE00F83B5E /* YahtzeeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2499FFEB293627BE00F83B5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24ED858B290AE1A800845164 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -163,6 +226,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2499FFE9293627BE00F83B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2499FFF7293627F200F83B5E /* GameBrainTests.swift in Sources */,
+				2499FFF0293627BE00F83B5E /* YahtzeeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24ED8589290AE1A800845164 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +247,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2499FFF2293627BE00F83B5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24ED858C290AE1A800845164 /* Yahtzee */;
+			targetProxy = 2499FFF1293627BE00F83B5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		24ED8596290AE1A800845164 /* Main.storyboard */ = {
@@ -196,6 +276,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2499FFF4293627BE00F83B5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3C9LFY2Z3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aashiq.YahtzeeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yahtzee.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Yahtzee";
+			};
+			name = Debug;
+		};
+		2499FFF5293627BE00F83B5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3C9LFY2Z3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aashiq.YahtzeeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yahtzee.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Yahtzee";
+			};
+			name = Release;
+		};
 		24ED859F290AE1AA00845164 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -317,7 +433,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P3C9LFY2Z3;
+				DEVELOPMENT_TEAM = 7Z89C2BH38;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yahtzee/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -345,7 +461,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P3C9LFY2Z3;
+				DEVELOPMENT_TEAM = 7Z89C2BH38;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yahtzee/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -369,6 +485,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2499FFF3293627BE00F83B5E /* Build configuration list for PBXNativeTarget "YahtzeeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2499FFF4293627BE00F83B5E /* Debug */,
+				2499FFF5293627BE00F83B5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		24ED8588290AE1A800845164 /* Build configuration list for PBXProject "Yahtzee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
