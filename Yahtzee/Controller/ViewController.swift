@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let viewModel = ViewModel()
     
     @IBOutlet weak var diceRollContainer: UIView!
     @IBOutlet weak var diceStart: UIView!
@@ -135,9 +136,6 @@ class ViewController: UIViewController {
         //Refresh scores
         //Update so that when user selects a score, it stores that number so only numbers that have not been selected are refreshed to zero. Re-enable score selection after disabling in button function.
         if oneScoreButton.backgroundColor != UIColor.green{
-//            gameBrain.ones = 0
-//            gameBrain.calculateOnes()
-//            onesScore.text = String(gameBrain.ones)
             onesScore.text = String(gameBrain.ones())
             oneScoreButton.isEnabled = true
         }

@@ -27,8 +27,60 @@ final class GameBrain1 {
                 count += dice
             }
         }
-        
         return count
+    }
+    
+    func twos() -> Int {
+        return calculateSingles(2)
+    }
+    
+    func threes() -> Int {
+        return calculateSingles(3)
+    }
+    
+    func fours() -> Int {
+        return calculateSingles(4)
+    }
+    
+    func fives() -> Int {
+        return calculateSingles(5)
+    }
+    
+    func sixes() -> Int {
+        return calculateSingles(6)
+    }
+    
+//    func calculateThreeOfAKind() -> Int {
+//        let totalValue = dices.reduce(0, +)
+//        var set = CountedSet<Int>()
+//        dices.forEach{
+//            set.insert($0)
+//        }
+//        return set.elements.values.filter{$0 >= 3}.count > 0 ? totalValue : 0
+//    }
+    
+    func calculateDuplicates() {
+        
+    }
+    
+    func calculateThreeOfAKind() -> Int {
+        return 0
+    }
+}
+
+struct CountedSet<Element: Hashable> {
+    private(set) var elements: [Element: Int] = [:]
+    mutating func insert(_ member: Element) {
+        elements[member, default: 0] += 1
+    }
+    mutating func remove(_ member: Element) -> Element? {
+        guard var count = elements[member], count > 0 else { return nil }
+        count -= 1
+        elements[member] = count == 0 ? nil : count
+        return member
+    }
+    subscript(_ member: Element) -> Int {
+        elements[member] ?? 0
     }
 }
 
