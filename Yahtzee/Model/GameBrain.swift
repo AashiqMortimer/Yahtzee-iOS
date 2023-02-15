@@ -49,6 +49,8 @@ final class GameBrain1 {
     func sixes() -> Int {
         return calculateSingles(6)
     }
+
+    //threeOfAKind solution with Sets (trying to look at how to implement with a dictionary):
     
 //    func calculateThreeOfAKind() -> Int {
 //        let totalValue = dices.reduce(0, +)
@@ -59,8 +61,21 @@ final class GameBrain1 {
 //        return set.elements.values.filter{$0 >= 3}.count > 0 ? totalValue : 0
 //    }
     
-    func calculateDuplicates() {
-        
+    // Attempts to implement 'calculateDuplicates' with dictionary for Three/Four of a Kind:
+    
+    func calculateDuplicates(_ value: Int) -> Int {
+//        var diceDict = [Int: Int]()
+//        var duplicateValue = [Int]()
+//
+//        for (diceNum, value) in dices.enumerated(){
+//
+//            if diceDict[value] != nil {
+//                diceDict.updateValue(value, forKey: diceNum)
+//            } else {
+//                duplicateValue.append(value)
+//            }
+//        }
+        return 0
     }
     
     func calculateThreeOfAKind() -> Int {
