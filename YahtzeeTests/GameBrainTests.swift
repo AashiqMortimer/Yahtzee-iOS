@@ -156,19 +156,89 @@ final class GameBrainTests: XCTestCase {
         XCTAssertEqual(actualResult, expectedResult)
     }
     
-    func testWhenThreeTwosReturnEighteen() throws {
+    func testWhenThreeTwosAppearThenReturnEighteen() throws {
         //Given
         let gameBrain = GameBrain1([2,2,2,6,6])
         
         //When
-        let actualResult = gameBrain.calculateThreeOfAKind()
+        let actualResult = gameBrain.threeOfAKind()
         let expectedResult = 18
         
         //Then
         XCTAssertEqual(actualResult, expectedResult)
     }
     
+    func testWhenFourFivesAppearThenReturnSeventeen() throws {
+        //Given
+        let gameBrain = GameBrain1([4, 4, 4, 1, 4])
+        
+        //When
+        let actualResult = gameBrain.fourOfAKind()
+        let expectedResult = 17
+        
+        //Then
+        XCTAssertEqual(actualResult, expectedResult)
+    }
     
+    func testWhenThreeTwosAndTwoFivesAppearThenReturnTwentyFive() throws {
+        //Given
+        let gameBrain = GameBrain1([2, 2, 2, 5, 5])
+        
+        //When
+        let actualResult = gameBrain.fullHouse()
+        let expectedResult = 25
+        
+        //Then
+        XCTAssertEqual(actualResult, expectedResult)
+    }
+    
+    func testWhenTwoAndThreeAndFourAndFiveAppearThenReturnThirty() throws {
+        //Given
+        let gameBrain = GameBrain1([2, 3, 4, 5, 3])
+        
+        //When
+        let actualResult = gameBrain.smallStraight()
+        let expectedResult = 30
+        
+        //Then
+        XCTAssertEqual(actualResult, expectedResult)
+    }
+    
+    func testWhenOneAndTwoAndThreeAndFourAndFiveAppearThenReturnForty() throws {
+        //Given
+        let gameBrain = GameBrain1([1, 2, 3, 4, 5])
+        
+        //When
+        let actualResult = gameBrain.largeStraight()
+        let expectedResult = 40
+        
+        //Then
+        XCTAssertEqual(actualResult, expectedResult)
+    }
+    
+    func testWhenFiveSixesAppearThenReturnFifty() throws {
+        //Given
+        let gameBrain = GameBrain1([6, 6, 6, 6, 6])
+        
+        //When
+        let actualResult = gameBrain.yahtzee()
+        let expectedResult = 50
+        
+        //Then
+        XCTAssertEqual(actualResult, expectedResult)
+    }
+    
+    func testWhenThreeTwosAndOneFourAndOneSixAppearThenReturnSixteen() throws {
+        //Given
+        let gameBrain = GameBrain1([2, 2, 2, 4, 6])
+        
+        //When
+        let actualResult = gameBrain.chance()
+        let expectedResult = 16
+        
+        //Then
+        XCTAssertEqual(actualResult, expectedResult)
+    }
 }
 
 
