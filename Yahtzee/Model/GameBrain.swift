@@ -8,10 +8,10 @@
 import UIKit
 
 final class GameBrain1 {
-    private let dices: [Int]
+    private let dice: [Int]
     
     init(_ dices: [Int]){
-        self.dices = dices
+        self.dice = dices
     }
     
     func ones() -> Int {
@@ -22,9 +22,9 @@ final class GameBrain1 {
         var count = 0
         
         //I returned an error when changing 'dice' to $0. Can we look at this?
-        dices.forEach { dice in
-            if dice == value{
-                count += dice
+        dice.forEach { die in
+            if die == value{
+                count += die
             }
         }
         return count
@@ -61,24 +61,45 @@ final class GameBrain1 {
 //        return set.elements.values.filter{$0 >= 3}.count > 0 ? totalValue : 0
 //    }
     
-    // Attempts to implement 'calculateDuplicates' with dictionary for Three/Four of a Kind:
-    
     func calculateDuplicates(_ value: Int) -> Int {
-//        var diceDict = [Int: Int]()
-//        var duplicateValue = [Int]()
-//
-//        for (diceNum, value) in dices.enumerated(){
-//
-//            if diceDict[value] != nil {
-//                diceDict.updateValue(value, forKey: diceNum)
-//            } else {
-//                duplicateValue.append(value)
-//            }
-//        }
+        var tallyDict: [Int: Int] = [:]
+        
+        for die in dice {
+            tallyDict[die, default: 0] += 1
+        }
+        
+        if tallyDict.contains(where: { $0.value >= value }) {
+            return dice.reduce(0, +)
+        } else {
+            return 0
+        }
+    }
+    
+    func threeOfAKind() -> Int {
+        return calculateDuplicates(3)
+    }
+    
+    func fourOfAKind() -> Int {
+        return calculateDuplicates(4)
+    }
+    
+    func fullHouse() -> Int {
         return 0
     }
     
-    func calculateThreeOfAKind() -> Int {
+    func smallStraight() -> Int {
+        return 0
+    }
+    
+    func largeStraight() -> Int {
+        return 0
+    }
+    
+    func yahtzee() -> Int {
+        return 0
+    }
+    
+    func chance() -> Int {
         return 0
     }
 }
