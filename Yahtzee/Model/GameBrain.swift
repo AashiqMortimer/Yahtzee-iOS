@@ -8,11 +8,11 @@
 import UIKit
 
 final class GameBrain1 {
-    private let dice: [Int]
+    var dice: [Int] = [0, 0, 0, 0, 0]
     
-    init(_ dices: [Int]){
-        self.dice = dices
-    }
+//    init(_ dices: [Int]){
+//        self.dice = dices
+//    }
     
     func ones() -> Int {
         return calculateSingles(1)

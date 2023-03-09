@@ -9,10 +9,11 @@ import XCTest
 @testable import Yahtzee
 
 final class GameBrainTests: XCTestCase {
+    let gameBrain = GameBrain1()
     
     func testWhenNoOnesAppearThenOnesReturnsZero() throws {
         //Given
-        let gameBrain = GameBrain1([6, 6, 6, 6, 6])
+        gameBrain.dice = [6, 6, 6, 6, 6]
         
         //When
         let actualResult = gameBrain.ones()
@@ -25,7 +26,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenTwoOnesAppearThenOnesReturnsTwo() throws {
         //Given
-        let gameBrain = GameBrain1([1, 1, 6, 6, 6])
+        gameBrain.dice = [1, 1, 6, 6, 6]
         
         //When
         let actualResult = gameBrain.ones()
@@ -38,7 +39,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenNoTwosAppearThenTwosReturnZero() throws {
         //Given
-        let gameBrain = GameBrain1([1,1,6,6,6])
+        gameBrain.dice = [1, 1, 6, 6, 6]
         
         //When
         let actualResult = gameBrain.twos()
@@ -50,7 +51,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenThreeTwosAppearThenTwosReturnSix() throws {
         //Given
-        let gameBrain = GameBrain1([2,2,2,6,6])
+        gameBrain.dice = [2,2,2,6,6]
         
         //When
         let actualResult = gameBrain.twos()
@@ -62,7 +63,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenNoThreesAppearThenThreesReturnZero() throws {
         //Given
-        let gameBrain = GameBrain1([1,1,6,6,6])
+        gameBrain.dice = [1,1,6,6,6]
         
         //When
         let actualResult = gameBrain.threes()
@@ -74,7 +75,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenTwoThreesAppearThenThreesReturnSix() throws {
         //Given
-        let gameBrain = GameBrain1([3,3,2,6,6])
+        gameBrain.dice = [3,3,2,6,6]
         
         //When
         let actualResult = gameBrain.threes()
@@ -86,7 +87,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenNoFoursAppearThenFoursReturnZero() throws {
         //Given
-        let gameBrain = GameBrain1([1,1,6,6,6])
+        gameBrain.dice = [1,1,6,6,6]
         
         //When
         let actualResult = gameBrain.fours()
@@ -98,7 +99,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenThreeFoursAppearThenFoursReturnTwelve() throws {
         //Given
-        let gameBrain = GameBrain1([3,3,4,4,4])
+        gameBrain.dice = [3,3,4,4,4]
         
         //When
         let actualResult = gameBrain.fours()
@@ -110,7 +111,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenNoFivesAppearThenFivesReturnZero() throws {
         //Given
-        let gameBrain = GameBrain1([1,1,1,6,6])
+        gameBrain.dice = [1,1,1,6,6]
         
         //When
         let actualResult = gameBrain.fives()
@@ -122,7 +123,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenThreeFivesAppearThenFivesReturnFifteen() throws {
         //Given
-        let gameBrain = GameBrain1([3,3,5,5,5])
+        gameBrain.dice = [3,3,5,5,5]
         
         //When
         let actualResult = gameBrain.fives()
@@ -134,7 +135,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenNoSixesAppearThenSixesReturnZero() throws {
         //Given
-        let gameBrain = GameBrain1([1,1,1,5,5])
+        gameBrain.dice = [1,1,1,5,5]
         
         //When
         let actualResult = gameBrain.sixes()
@@ -146,7 +147,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenThreeSixesAppearThenSixesReturnEighteen() throws {
         //Given
-        let gameBrain = GameBrain1([3,3,6,6,6])
+        gameBrain.dice = [3,3,6,6,6]
         
         //When
         let actualResult = gameBrain.sixes()
@@ -158,7 +159,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenThreeTwosAppearThenReturnEighteen() throws {
         //Given
-        let gameBrain = GameBrain1([2,2,2,6,6])
+        gameBrain.dice = [2,2,2,6,6]
         
         //When
         let actualResult = gameBrain.threeOfAKind()
@@ -170,7 +171,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenFourFivesAppearThenReturnSeventeen() throws {
         //Given
-        let gameBrain = GameBrain1([4, 4, 4, 1, 4])
+        gameBrain.dice = [4, 4, 4, 1, 4]
         
         //When
         let actualResult = gameBrain.fourOfAKind()
@@ -182,7 +183,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenThreeTwosAndTwoFivesAppearThenReturnTwentyFive() throws {
         //Given
-        let gameBrain = GameBrain1([2, 2, 2, 5, 5])
+        gameBrain.dice = [2, 2, 2, 5, 5]
         
         //When
         let actualResult = gameBrain.fullHouse()
@@ -194,7 +195,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenTwoAndThreeAndFourAndFiveAppearThenReturnThirty() throws {
         //Given
-        let gameBrain = GameBrain1([2, 3, 4, 5, 3])
+        gameBrain.dice = [2, 3, 4, 5, 3]
         
         //When
         let actualResult = gameBrain.smallStraight()
@@ -206,7 +207,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenOneAndTwoAndThreeAndFourAndFiveAppearThenReturnForty() throws {
         //Given
-        let gameBrain = GameBrain1([1, 2, 3, 4, 5])
+        gameBrain.dice = [1, 2, 3, 4, 5]
         
         //When
         let actualResult = gameBrain.largeStraight()
@@ -218,7 +219,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenFiveSixesAppearThenReturnFifty() throws {
         //Given
-        let gameBrain = GameBrain1([6, 6, 6, 6, 6])
+        gameBrain.dice = [6, 6, 6, 6, 6]
         
         //When
         let actualResult = gameBrain.yahtzee()
@@ -230,7 +231,7 @@ final class GameBrainTests: XCTestCase {
     
     func testWhenThreeTwosAndOneFourAndOneSixAppearThenReturnSixteen() throws {
         //Given
-        let gameBrain = GameBrain1([2, 2, 2, 4, 6])
+        gameBrain.dice = [2, 2, 2, 4, 6]
         
         //When
         let actualResult = gameBrain.chance()

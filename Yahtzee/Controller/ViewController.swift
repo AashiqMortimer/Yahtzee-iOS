@@ -7,8 +7,79 @@
 
 import UIKit
 
+class ViewController2: UIViewController {
+    let viewModel: ViewModel
+    
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print(viewModel.gameBrain.dice)
+        view.backgroundColor = UIColor.red
+        let label = UILabel()
+        label.frame = CGRectMake(0, 50, view.bounds.width, 50)
+        label.text = viewModel.title
+        label.textAlignment = .center
+        view.addSubview(label)
+        let oneOfAKindTitle = UILabel()
+        oneOfAKindTitle.frame = CGRectMake(0, label.frame.maxY + 50, view.bounds.width, 50)
+        oneOfAKindTitle.textAlignment = .center
+        oneOfAKindTitle.text = viewModel.oneOfAKindTitle
+        view.addSubview(oneOfAKindTitle)
+        let oneOfAKindValue = UILabel()
+        oneOfAKindValue.frame = CGRectMake(0, oneOfAKindTitle.frame.maxY + 50, view.bounds.width, 50)
+        oneOfAKindValue.textAlignment = .center
+        oneOfAKindValue.text = viewModel.oneOfAKindValue
+        view.addSubview(oneOfAKindValue)
+        let twoOfAKindTitle = UILabel()
+        twoOfAKindTitle.frame = CGRectMake(0, label.frame.maxY + 100, view.bounds.width, 50)
+        twoOfAKindTitle.textAlignment = .center
+        twoOfAKindTitle.text = viewModel.twoOfAKindTitle
+        view.addSubview(twoOfAKindTitle)
+        let twoOfAKindValue = UILabel()
+        twoOfAKindValue.frame = CGRectMake(0, twoOfAKindTitle.frame.maxY + 50, view.bounds.width, 50)
+        twoOfAKindValue.textAlignment = .center
+        twoOfAKindValue.text = viewModel.twoOfAKindValue
+        view.addSubview(twoOfAKindValue)
+        
+        //Attempt at creating UIButton to roll dice
+        let rollButton = UIButton()
+        rollButton.frame = CGRectMake(0, label.frame.maxY + 100, 150, 50)
+        rollButton.setTitle("Roll", for: .normal)
+        rollButton.setTitleColor(.black, for: .normal)
+        rollButton.backgroundColor = .white
+        
+        //This is the action for when the button is tapped. I have made a call to the ViewModel within a closure here.
+        rollButton.addAction(UIAction(handler: { _ in
+            self.viewModel.rollDice()
+            print(self.viewModel.gameBrain.dice)
+        }), for: .touchUpInside)
+        view.addSubview(rollButton)
+        
+        //Just for the sake of testing functionality, I have created a second button to make the call 'reset'
+        let resetButton = UIButton()
+        resetButton.frame = CGRectMake(0, rollButton.frame.maxY + 100, 150, 50)
+        resetButton.setTitle("Reset", for: .normal)
+        resetButton.setTitleColor(.black, for: .normal)
+        resetButton.backgroundColor = .gray
+        
+        resetButton.addAction(UIAction(handler: { _ in
+            self.viewModel.resetDice()
+            print(self.viewModel.gameBrain.dice)
+        }	), for: .touchUpInside)
+        view.addSubview(resetButton)
+    }
+}
+
 class ViewController: UIViewController {
-    let viewModel = ViewModel()
     
     @IBOutlet weak var diceRollContainer: UIView!
     @IBOutlet weak var diceStart: UIView!
