@@ -72,7 +72,6 @@ class ViewController2: UIViewController {
         resetButton.backgroundColor = .gray
         
         resetButton.addAction(UIAction(handler: { _ in
-            self.viewModel.resetDice()
             print(self.viewModel.gameBrain.dice)
         }	), for: .touchUpInside)
         view.addSubview(resetButton)

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		241E2FA1294206BF00CCD5E5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E2FA0294206BF00CCD5E5 /* ViewModel.swift */; };
 		2475BC7929B9DD0200069FE5 /* DiceRoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475BC7829B9DD0200069FE5 /* DiceRoller.swift */; };
-		2475BC7A29B9DD0200069FE5 /* DiceRoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475BC7829B9DD0200069FE5 /* DiceRoller.swift */; };
 		2475BC7C29B9F2BE00069FE5 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475BC7B29B9F2BE00069FE5 /* ViewModelTests.swift */; };
 		2499FFF0293627BE00F83B5E /* YahtzeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2499FFEF293627BE00F83B5E /* YahtzeeTests.swift */; };
 		2499FFF7293627F200F83B5E /* GameBrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2499FFF6293627F200F83B5E /* GameBrainTests.swift */; };
@@ -35,7 +34,7 @@
 /* Begin PBXFileReference section */
 		240332F62923CA7E0013AE35 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		241E2FA0294206BF00CCD5E5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		2475BC7829B9DD0200069FE5 /* DiceRoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRoller.swift; sourceTree = "<group>"; };
+		2475BC7829B9DD0200069FE5 /* DiceRoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRoller.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		2475BC7B29B9F2BE00069FE5 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		2499FFED293627BE00F83B5E /* YahtzeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YahtzeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2499FFEF293627BE00F83B5E /* YahtzeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahtzeeTests.swift; sourceTree = "<group>"; };
@@ -243,7 +242,6 @@
 				2499FFF7293627F200F83B5E /* GameBrainTests.swift in Sources */,
 				2499FFF0293627BE00F83B5E /* YahtzeeTests.swift in Sources */,
 				2475BC7C29B9F2BE00069FE5 /* ViewModelTests.swift in Sources */,
-				2475BC7A29B9DD0200069FE5 /* DiceRoller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

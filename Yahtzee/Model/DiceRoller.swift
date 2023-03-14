@@ -8,8 +8,8 @@
 import Foundation
 
 protocol DiceRollerRepresentative {
-    func roll(for availableDice: [Int]) -> [Int]
-    func reset(for dice: inout [Int])
+    func roll() -> [Int]
+//    func reset(for dice: inout [Int])
 }
 
 final class DiceRoller: DiceRollerRepresentative {
@@ -22,12 +22,11 @@ final class DiceRoller: DiceRollerRepresentative {
 //    var dice: [Int] = [1, 1, 1, 1, 1]
 //    var availableDice: [Int]
 //
-    func roll(for availableDice: [Int]) -> [Int] {
-        let rand = [1, 2, 3, 4, 5, 6]
-        return availableDice.map { _ in rand.randomElement()! }
+    func roll() -> [Int] {
+        return Array(repeating: 1, count: 5).map { _ in (1...6).randomElement()! }
     }
     
-    func reset(for dice: inout [Int]) {
-        dice = [1, 1, 1, 1, 1]
-    }
+//    func reset(for dice: inout [Int]) {
+//        dice = [1, 1, 1, 1, 1]
+//    }
 }

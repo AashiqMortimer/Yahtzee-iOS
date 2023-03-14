@@ -16,6 +16,9 @@ protocol ViewModelRepresentable {
 }
 
 struct ViewModel: ViewModelRepresentable {
+    let gameBrain: GameBrain1
+    let diceRoller: DiceRollerRepresentative
+    
     let title: String = "Yahtzee"
     let rollTitle: String = "Roll"
     let oneOfAKindTitle: String = "One of a Kind"
@@ -31,20 +34,18 @@ struct ViewModel: ViewModelRepresentable {
         }
     }
     
-    let gameBrain: GameBrain1
-    func start() {
-        gameBrain.dice = [1,1,2,1,2]
-    }
-    
-    let diceRoller: DiceRoller
-    
     func rollDice() {
-        gameBrain.dice = diceRoller.roll(for: gameBrain.dice)
+        let dice = diceRoller.roll()
+        gameBrain.dice = dice
     }
     
-    func resetDice() {
-        diceRoller.reset(for: &gameBrain.dice)
-    }
+//    func rollDice() {
+//        gameBrain.dice = diceRoller.roll(for: gameBrain.dice)
+//    }
+    
+//    func resetDice() {
+//        diceRoller.reset(for: &gameBrain.dice)
+//    }
     
 }
 
